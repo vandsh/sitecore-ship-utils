@@ -2,7 +2,7 @@
     This function "smart" publishes the specified Sitecore target to the given $SiteUrl.
     It uses cURL (http://curl.haxx.se/) to post a request to a Sitecore website which has Sitecore Ship installed.
     Example usage: 
-    .\publish-sitecorepackage.ps1 mysite.dev "preview,web" 60 300
+    .\publish-sitecorepackage.ps1 mysite.dev "preview,web" "smart" 60 300
 #>
 
 Param(
