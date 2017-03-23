@@ -1,7 +1,7 @@
 <#
     This function uploads & installs the specified Sitecore update package to the given $SiteUrl.
     It uses cURL (http://curl.haxx.se/) to post a request to a Sitecore website which has Sitecore Ship installed.
-    Example usage: 
+    Example usage:
     .\deploy-sitecorepackage.ps1 mysite.dev "C:\Project\Build\Artifacts\1-mysite-templates.update" 60 300
 #>
 
@@ -20,7 +20,7 @@ Param(
 
 $fileUploadUrl = "$SiteUrl/services/package/install/fileupload"
 $curlPath = .$PSScriptRoot\get-curlpath.ps1
-$curlCommand= "$curlPath -sS -fail --connect-timeout $ConnectionTimeOutInSeconds --max-time $MaxTimeOutInSeconds --form ""filename=@$UpdatePackagePath"" $fileUploadUrl --progress-bar  > dev/null"
+$curlCommand= "$curlPath -sS -fail --connect-timeout $ConnectionTimeOutInSeconds --max-time $MaxTimeOutInSeconds --form ""filename=@$UpdatePackagePath"" $fileUploadUrl --progress-bar"
 
 Write-Output "INFO: Starting Invoke-Expression: $curlCommand"
 
