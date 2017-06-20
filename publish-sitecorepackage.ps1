@@ -11,7 +11,7 @@ Param(
     [Parameter(Position=1, Mandatory=$true)]
     [string]$PublishTargets = "preview,web",
 	[Parameter(Position=2, Mandatory=$true)]
-    [string]$PublishLanguaes = "en",
+    [string]$PublishLanguages = "en",
 	[Parameter(Position=3, Mandatory=$false)]
     [string]$PublishMode = "smart",
     [Parameter(Position=4)]
@@ -29,7 +29,7 @@ Param(
 $publishUrl = "$SiteUrl/services/publish/$PublishMode"
 
 $targetDatabases = $PublishTargets -split ","
-$targetLanguages = $PublishLanguaes -split ","
+$targetLanguages = $PublishLanguages -split ","
 $pubishItems = @{
 		targets = $targetDatabases
 		languages = $targetLanguages
